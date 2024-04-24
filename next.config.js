@@ -4,8 +4,8 @@ const nextConfig = {
   reactStrictMode: true,
   trailingSlash: true,
   swcMinify: true,
-  basePath: isProd ? '/nowa/preview' : undefined,
-  assetPrefix : undefined,
+  basePath: undefined,
+  assetPrefix: undefined,
   images: {
     loader: 'imgix',
     path: '/',
