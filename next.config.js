@@ -5,7 +5,7 @@ const nextConfig = {
   trailingSlash: true,
   swcMinify: true,
   basePath: isProd ? '/nowa/preview' : undefined,
-  assetPrefix : isProd ? 'https://nextjs.spruko.com/nowa/preview/' : undefined,
+  assetPrefix : isProd ? 'https://master--legendary-lollipop-fa121a.netlify.app/nowa/preview/' : undefined,
   images: {
     loader: 'imgix',
     path: '/',
