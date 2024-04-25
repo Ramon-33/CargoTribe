@@ -786,13 +786,6 @@ export const MENUITEMS = [
               selected:false,
             },
             {
-              path: `/components/icons/flag-icons`,
-              title: "Flag Icons",
-              type: "link",
-              active:false,
-              selected:false,
-            },
-            {
               path: `/components/icons/pe7-icons`,
               title: "Pe7 Icons",
               type: "link",
