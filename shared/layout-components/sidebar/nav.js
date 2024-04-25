@@ -46,7 +46,7 @@ export const MENUITEMS = [
     },
   
     {
-      menutitle: "WEB APPS",
+      menutitle: "SALES",
       Items: [
         {
           title: "Apps",
@@ -239,7 +239,7 @@ export const MENUITEMS = [
     },
   
     {
-      menutitle: "PAGES",
+      menutitle: "OPS",
       Items: [
         {
           title: "Pages",
@@ -598,7 +598,7 @@ export const MENUITEMS = [
       ],
     },
     {
-      menutitle: "GENERAL",
+      menutitle: "ACCOUNTING",
       Items: [
         {
           title: "Icons",
