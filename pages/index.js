@@ -25,7 +25,7 @@ export default function Home() {
   // Firebase
   const [err, setError] = useState("");
   const [data, setData] = useState({
-   "email": "adminnextjs@gmail.com",
+   "email": "ramon_kolk@singaporeair.com.sg",
   "password": "1234567890",
   })
   const { email, password } = data;
@@ -47,13 +47,13 @@ export default function Home() {
 
   const ReactLogin = (e) => {
     console.log(data);
-    if (data.email == "adminnextjs@gmail.com" && data.password == "1234567890"){
+    if (data.email == "ramon_kolk@singaporeair.com.sg" && data.password == "1234567890"){
       routeChange()
     }
     else{
       setError("The Auction details did not Match")
       setData({
-        "email": "adminnextjs@gmail.com",
+        "email": "ramon_kolk@singaporeair.com.sg",
        "password": "1234567890",
        })
     }
