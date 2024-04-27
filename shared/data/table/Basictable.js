@@ -9,28 +9,28 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 
 export const COLUMNS = [
   {
-    Header: "Name",
-    accessor: "Name",
+    Header: "Agent",
+    accessor: "Agent",
     className: "wd-20p borderrigth",
   },
   {
-    Header: "Position",
-    accessor: "Position",
+    Header: "Fullname",
+    accessor: "Fullname",
     className: "wd-25p borderrigth",
   },
   {
-    Header: "Office",
-    accessor: "Office",
+    Header: "Email",
+    accessor: "Email",
     className: "wd-20p borderrigth",
   },
   {
-    Header: "Age",
-    accessor: "Age",
+    Header: "Phone",
+    accessor: "Phone",
     className: "wd-15p borderrigth",
   },
   {
-    Header: "Salary",
-    accessor: "Salary",
+    Header: "Mobile",
+    accessor: "Mobile",
     className: "wd-20p borderrigth",
   },
 ];
@@ -43,7 +43,7 @@ export const BasicTable = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const { data, error } = await supabase.from('test1').select('*');
+        const { data, error } = await supabase.from('customers').select('*');
         if (error) {
           throw error;
         }
