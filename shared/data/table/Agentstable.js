@@ -98,7 +98,7 @@ export const BasicTable = () => {
   const handleSave = async () => {
     try {
       const { data, error } = await supabase
-        .from('customers')
+        .from('agents')
         .update(updatedData)
         .eq('id', selectedRow.original.id);
       if (error) {
@@ -254,32 +254,12 @@ export const BasicTable = () => {
               />
             </div>
             <div>
-              <Form.Label className="form-label">Fullname</Form.Label>{" "}
+              <Form.Label className="form-label">Website</Form.Label>{" "}
               <Form.Control
-                name="Fullname"
-                placeholder="Enter Fullname"
+                name="Website"
+                placeholder="Enter Website"
                 type="text"
-                defaultValue={`${selectedRow.original.Firstname} ${selectedRow.original.Lastname}`}
-                onChange={handleInputChange}
-              />
-            </div>
-            <div>
-              <Form.Label className="form-label">Firstname</Form.Label>{" "}
-              <Form.Control
-                name="Firstname"
-                placeholder="Enter Firstname"
-                type="text"
-                defaultValue={selectedRow.original.Firstname}
-                onChange={handleInputChange}
-              />
-            </div>
-            <div>
-              <Form.Label className="form-label">Lastname</Form.Label>{" "}
-              <Form.Control
-                name="Lastname"
-                placeholder="Enter Lastname"
-                type="text"
-                defaultValue={selectedRow.original.Lastname}
+                defaultValue={selectedRow.original.Website}
                 onChange={handleInputChange}
               />
             </div>
@@ -288,28 +268,8 @@ export const BasicTable = () => {
               <Form.Control
                 name="Email"
                 placeholder="Enter Email"
-                type="email"
+                type="text"
                 defaultValue={selectedRow.original.Email}
-                onChange={handleInputChange}
-              />
-            </div>
-            <div>
-              <Form.Label className="form-label">Phone</Form.Label>{" "}
-              <Form.Control
-                name="Phone"
-                placeholder="Enter Phone"
-                type="text"
-                defaultValue={selectedRow.original.Phone}
-                onChange={handleInputChange}
-              />
-            </div>
-            <div>
-              <Form.Label className="form-label">Mobile</Form.Label>{" "}
-              <Form.Control
-                name="Mobile"
-                placeholder="Enter Mobile"
-                type="text"
-                defaultValue={selectedRow.original.Mobile}
                 onChange={handleInputChange}
               />
             </div>
