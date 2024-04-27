@@ -66,6 +66,27 @@ export const MENUITEMS = [
           active:false,
           children: [
             {
+              path: `/components/apps/agents`,
+              type: "link",
+              active:false,
+              selected:false,
+              title: "Agents",
+            },
+            {
+              path: `/components/apps/contacts1`,
+              type: "link",
+              active:false,
+              selected:false,
+              title: "Contacts",
+            },
+            {
+              path: `/components/apps/opportunities`,
+              type: "link",
+              active:false,
+              selected:false,
+              title: "Opportunities",
+            },
+            {
               path: `/components/apps/calendar`,
               type: "link",
               active:false,
