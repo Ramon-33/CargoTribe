@@ -269,7 +269,7 @@ export const BasicTable = () => {
                 name="Fullname"
                 placeholder="Enter Fullname"
                 type="text"
-                defaultValue={selectedRow.original.Fullname}
+                defaultValue={`${selectedRow.original.Firstname} ${selectedRow.original.Lastname}`}
                 onChange={handleInputChange}
               />
             </div>
