@@ -12,7 +12,8 @@ export const COLUMNS = [
   {
     Header: "ID",
     accessor: "id",
-    className: "wd-20p borderrigth",
+    className: "wd-4p borderrigth",
+    hidden: true,
   },
   {
     Header: "Agent",
