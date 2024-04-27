@@ -2,7 +2,7 @@ import Seo from '@/shared/layout-components/seo/seo';
 import React from 'react';
 import { Breadcrumb, Card, Col, Row } from 'react-bootstrap';
 
-const EmptyPage = () => (
+const EmptyPage1 = () => (
   <div>
       <Seo title={"Empty Page"}/>
 
@@ -44,10 +44,10 @@ const EmptyPage = () => (
     </div>
 );
 
-EmptyPage.propTypes = {};
+EmptyPage1.propTypes = {};
 
-EmptyPage.defaultProps = {};
+EmptyPage1.defaultProps = {};
 
-EmptyPage.layout = "Contentlayout"
+EmptyPage1.layout = "Contentlayout"
 
-export default EmptyPage;
+export default EmptyPage1;
