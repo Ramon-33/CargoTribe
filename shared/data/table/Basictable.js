@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button, Form, Modal } from "react-bootstrap";
+import { Button, Modal } from "react-bootstrap";
 import { useTable, useSortBy, useGlobalFilter, usePagination } from "react-table";
 import { createClient } from '@supabase/supabase-js';
 
