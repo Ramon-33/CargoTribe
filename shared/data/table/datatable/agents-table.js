@@ -14,13 +14,6 @@ const DataTablesCom = () => {
         <Col lg={12}>
           <Card className="custom-card overflow-hidden">
             <Card.Body>
-              <div>
-                <h6 className="main-content-label mb-1">Basic DataTable</h6>
-                <p className="text-muted card-sub-title">
-                  Searching, ordering and paging goodness will be immediately
-                  added to the table, as shown in this example.
-                </p>
-              </div>
               <div className="table-responsive">
                 <BasicTable />
               </div>
