@@ -1,6 +1,8 @@
 import Seo from '@/shared/layout-components/seo/seo';
 import React from 'react';
 import { Breadcrumb, Card, Col, Row } from 'react-bootstrap';
+import dynamic from 'next/dynamic';
+const DataTablesCom = dynamic(()=>import('@/shared/data/table/datatable/data-tables-com'), { ssr: false })
 
 const EmptyPage1 = () => (
   <div>
@@ -43,6 +45,10 @@ const EmptyPage1 = () => (
       {/* <!-- row closed --> */}
     </div>
 );
+
+DataTables.propTypes = {};
+DataTables.defaultProps = {};
+DataTables.layout = "Contentlayout"
 
 EmptyPage1.propTypes = {};
 
