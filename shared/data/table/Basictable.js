@@ -216,7 +216,7 @@ export const BasicTable = () => {
       {selectedRow && (
         <Modal show={showModal} onHide={() => setShowModal(false)}>
           <Modal.Header closeButton>
-            <Modal.Title>Row Details</Modal.Title>
+            <Modal.Title>Contact Details</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <div>
@@ -246,19 +246,23 @@ export const BasicTable = () => {
               defaultValue={selectedRow.original.Email}
             />
             </div>
+            <div>
+              <Form.Label className="form-label">Phone</Form.Label>{" "}
+              <Form.Control
 
+              placeholder="Enter Phone"
+              type="text"
+              defaultValue={selectedRow.original.Phone}
+            />
+            </div>
+            <div>
+              <Form.Label className="form-label">Mobile</Form.Label>{" "}
+              <Form.Control
 
-            <div>
-              <strong>Fullname:</strong> {selectedRow.original.Fullname}
-            </div>
-            <div>
-              <strong>Email:</strong> {selectedRow.original.Email}
-            </div>
-            <div>
-              <strong>Phone:</strong> {selectedRow.original.Phone}
-            </div>
-            <div>
-              <strong>Mobile:</strong> {selectedRow.original.Mobile}
+              placeholder="Enter Mobile"
+              type="text"
+              defaultValue={selectedRow.original.Mobile}
+            />
             </div>
           </Modal.Body>
           <Modal.Footer>
