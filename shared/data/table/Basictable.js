@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button, Modal } from "react-bootstrap";
+import { Button, Form, Modal } from "react-bootstrap";
 import { useTable, useSortBy, useGlobalFilter, usePagination } from "react-table";
 import { createClient } from '@supabase/supabase-js';
 
@@ -246,4 +246,15 @@ export const BasicTable = () => {
   );
 };
 
-const Global
+const GlobalFilter = ({ filter, setFilter }) => {
+  return (
+    <span className="d-flex ms-auto">
+      <Form.Control
+        value={filter || ""}
+        onChange={(e) => setFilter(e.target.value)}
+        className="form-control mb-4"
+        placeholder="Search..."
+      />
+    </span>
+  );
+};
