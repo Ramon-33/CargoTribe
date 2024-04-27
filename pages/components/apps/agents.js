@@ -2,7 +2,7 @@ import Seo from '@/shared/layout-components/seo/seo';
 import React from 'react';
 import { Breadcrumb, Card, Col, Row } from 'react-bootstrap';
 import dynamic from 'next/dynamic';
-const DataTablesCom = dynamic(()=>import('@/shared/data/table/datatable/data-tables-com'), { ssr: false })
+const DataTablesCom = dynamic(()=>import('@/shared/data/table/datatable/agents-table'), { ssr: false })
 
 const Contacts = () => (
   <div>

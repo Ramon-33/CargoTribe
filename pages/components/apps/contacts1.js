@@ -11,6 +11,7 @@ const Contacts = () => (
         <div className="left-content">
           <span className="main-content-title mg-b-0 mg-b-lg-1">Contacts</span>
         </div>
+
       </div>
       {/* <!-- /breadcrumb -->
 
