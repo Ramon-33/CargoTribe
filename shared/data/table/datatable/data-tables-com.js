@@ -1,11 +1,6 @@
 import React from 'react'
 import {  Card,Breadcrumb, Col, Row } from 'react-bootstrap';
 import {BasicTable} from "../Basictable"
-import{Fixedheader} from "../Fixedheader"
-import { ExportCSV } from '../Exportcvs';
-import{DataTabless} from "../Deleterows"
-import {Savetable} from "../Addrows"
-
 
 const DataTablesCom = () => {
   return (
