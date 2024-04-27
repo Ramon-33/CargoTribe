@@ -9,7 +9,7 @@ const Contacts = () => (
       {/* <!-- breadcrumb --> */}
       <div className="breadcrumb-header justify-content-between">
         <div className="left-content">
-          <span className="main-content-title mg-b-0 mg-b-lg-1">Contact Details</span>
+          <span className="main-content-title mg-b-0 mg-b-lg-1">Contacts</span>
         </div>
         <div className="justify-content-center mt-2">
           <Breadcrumb className="breadcrumb">
@@ -21,11 +21,14 @@ const Contacts = () => (
               active
               aria-current="page"
             >
-              Empty Page
+              Conctacts
             </Breadcrumb.Item>
           </Breadcrumb>
         </div>
       </div>
+      {/* <!-- /breadcrumb -->
+
+					<!-- row --> */}
       
       <DataTablesCom/>
       {/* <!-- row closed --> */}
