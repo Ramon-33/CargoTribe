@@ -106,6 +106,17 @@ export const BasicTable = () => {
       }
       console.log("Record updated successfully:", data);
       // Close the modal after successful update
+
+    // Assuming agentsData is the state or data structure containing the rows
+    // Find the index of the updated row
+    const index = agentsData.findIndex(row => row.id === selectedRow.original.id);
+    
+    // Update the row with the new data
+    agentsData[index] = data[0]; // Assuming the updated data is returned as an array
+    
+    // Trigger re-render by updating the state, assuming agentsData is in the state
+    setAgentsData([...agentsData]);
+
       setShowModal(false);
     } catch (error) {
       console.error("Error updating record:", error.message);
