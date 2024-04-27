@@ -42,6 +42,7 @@ export const BasicTable = () => {
   const [error, setError] = useState(null);
   const [showModal, setShowModal] = useState(false);
 
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -91,6 +92,28 @@ export const BasicTable = () => {
   const handleRowClick = (row) => {
     setSelectedRow(row);
     setShowModal(true);
+  };
+
+  const handleSave = async () => {
+    try {
+      const { data, error } = await supabase
+        .from('customers')
+        .update(updatedData)
+        .eq('id', selectedRow.original.id);
+      if (error) {
+        throw error;
+      }
+      console.log("Record updated successfully:", data);
+      // Close the modal after successful update
+      setShowModal(false);
+    } catch (error) {
+      console.error("Error updating record:", error.message);
+    }
+  };
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setUpdatedData({ ...updatedData, [name]: value });
   };
 
   if (loading) return <div>Loading...</div>;
@@ -222,50 +245,58 @@ export const BasicTable = () => {
             <div>
               <Form.Label className="form-label">Agent</Form.Label>{" "}
               <Form.Control
-
-              placeholder="Enter Agent"
-              type="text"
-              defaultValue={selectedRow.original.Agent}
-            />
+                name="Agent"
+                placeholder="Enter Agent"
+                type="text"
+                defaultValue={selectedRow.original.Agent}
+                onChange={handleInputChange}
+              />
             </div>
             <div>
               <Form.Label className="form-label">Fullname</Form.Label>{" "}
               <Form.Control
-
-              placeholder="Enter Fullname"
-              type="text"
-              defaultValue={selectedRow.original.Fullname}
-            />
+                name="Fullname"
+                placeholder="Enter Fullname"
+                type="text"
+                defaultValue={selectedRow.original.Fullname}
+                onChange={handleInputChange}
+              />
             </div>
             <div>
               <Form.Label className="form-label">Email</Form.Label>{" "}
               <Form.Control
-
-              placeholder="Enter Email"
-              type="email"
-              defaultValue={selectedRow.original.Email}
-            />
+                name="Email"
+                placeholder="Enter Email"
+                type="email"
+                defaultValue={selectedRow.original.Email}
+                onChange={handleInputChange}
+              />
             </div>
             <div>
               <Form.Label className="form-label">Phone</Form.Label>{" "}
               <Form.Control
-
-              placeholder="Enter Phone"
-              type="text"
-              defaultValue={selectedRow.original.Phone}
-            />
+                name="Phone"
+                placeholder="Enter Phone"
+                type="text"
+                defaultValue={selectedRow.original.Phone}
+                onChange={handleInputChange}
+              />
             </div>
             <div>
               <Form.Label className="form-label">Mobile</Form.Label>{" "}
               <Form.Control
-
-              placeholder="Enter Mobile"
-              type="text"
-              defaultValue={selectedRow.original.Mobile}
-            />
+                name="Mobile"
+                placeholder="Enter Mobile"
+                type="text"
+                defaultValue={selectedRow.original.Mobile}
+                onChange={handleInputChange}
+              />
             </div>
           </Modal.Body>
           <Modal.Footer>
+            <Button variant="primary" onClick={handleSave}>
+              Save
+            </Button>
             <Button variant="secondary" onClick={() => setShowModal(false)}>
               Close
             </Button>
