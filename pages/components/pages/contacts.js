@@ -6,12 +6,10 @@ const DataTablesCom = dynamic(()=>import('@/shared/data/table/datatable/data-tab
 
 const Contacts = () => (
   <div>
-      <Seo title={"Empty Page"}/>
-
       {/* <!-- breadcrumb --> */}
       <div className="breadcrumb-header justify-content-between">
         <div className="left-content">
-          <span className="main-content-title mg-b-0 mg-b-lg-1">EMPTY PAGE</span>
+          <span className="main-content-title mg-b-0 mg-b-lg-1">Contact Details</span>
         </div>
         <div className="justify-content-center mt-2">
           <Breadcrumb className="breadcrumb">
@@ -28,21 +26,6 @@ const Contacts = () => (
           </Breadcrumb>
         </div>
       </div>
-      {/* <!-- /breadcrumb -->
-
-					<!-- row --> */}
-      <Row>
-        <Col md={12} xl={12} xs={12} sm={12} >
-          <Card>
-            <Card.Body>
-              <div>
-                <h6>Type text here.....</h6>
-              </div>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
-
       
       <DataTablesCom/>
       {/* <!-- row closed --> */}
