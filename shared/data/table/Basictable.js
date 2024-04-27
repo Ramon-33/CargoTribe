@@ -67,6 +67,9 @@ export const BasicTable = () => {
     {
       columns: COLUMNS,
       data: data,
+      initialState: {
+        sortBy: [{ id: 'id', desc: false }] // Sort by ID column in ascending order
+      }
     },
     useGlobalFilter,
     useSortBy,
