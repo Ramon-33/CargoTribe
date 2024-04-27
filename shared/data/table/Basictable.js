@@ -10,6 +10,11 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 
 export const COLUMNS = [
   {
+    Header: "ID",
+    accessor: "id",
+    className: "wd-20p borderrigth",
+  },
+  {
     Header: "Agent",
     accessor: "Agent",
     className: "wd-20p borderrigth",
