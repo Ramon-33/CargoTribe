@@ -223,6 +223,15 @@ export const BasicTable = () => {
             <Form.Label className="form-label mg-b-0"><strong>Agent:</strong></Form.Label>{selectedRow.original.Agent}
             </div>
             <div>
+              <Form.Label className="form-label">Email</Form.Label>{" "}
+              <Form.Control
+
+              placeholder="Enter your email"
+              type="email"
+              defaultValue="me@sprukotechnologies.com"
+            />
+            </div>
+            <div>
               <strong>Fullname:</strong> {selectedRow.original.Fullname}
             </div>
             <div>
