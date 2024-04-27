@@ -46,10 +46,6 @@ const EmptyPage1 = () => (
     </div>
 );
 
-DataTables.propTypes = {};
-DataTables.defaultProps = {};
-DataTables.layout = "Contentlayout"
-
 EmptyPage1.propTypes = {};
 
 EmptyPage1.defaultProps = {};
