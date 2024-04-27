@@ -11,20 +11,6 @@ const Contacts = () => (
         <div className="left-content">
           <span className="main-content-title mg-b-0 mg-b-lg-1">Contacts</span>
         </div>
-        <div className="justify-content-center mt-2">
-          <Breadcrumb className="breadcrumb">
-            <Breadcrumb.Item className="breadcrumb-item tx-15" href="#!">
-              Pages
-            </Breadcrumb.Item>
-            <Breadcrumb.Item
-              className="breadcrumb-item "
-              active
-              aria-current="page"
-            >
-              Conctacts
-            </Breadcrumb.Item>
-          </Breadcrumb>
-        </div>
       </div>
       {/* <!-- /breadcrumb -->
 
