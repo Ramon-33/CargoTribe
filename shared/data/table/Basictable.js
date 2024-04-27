@@ -221,8 +221,8 @@ export const BasicTable = () => {
           <Modal.Body>
             <div>
             <Form.Label className="form-label mg-b-0">
-              <strong>Agent:</strong> {selectedRow.original.Agent}
-            </Form.Label>  
+              <strong>Agent:</strong>
+            </Form.Label>   {selectedRow.original.Agent}
             </div>
             <div>
               <strong>Fullname:</strong> {selectedRow.original.Fullname}
