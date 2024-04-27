@@ -274,26 +274,6 @@ export const BasicTable = () => {
               />
             </div>
             <div>
-              <Form.Label className="form-label">Firstname</Form.Label>{" "}
-              <Form.Control
-                name="Firstname"
-                placeholder="Enter Firstname"
-                type="text"
-                defaultValue={selectedRow.original.Fullname}
-                onChange={handleInputChange}
-              />
-            </div>
-            <div>
-              <Form.Label className="form-label">Lastname</Form.Label>{" "}
-              <Form.Control
-                name="Lastname"
-                placeholder="Enter Lastname"
-                type="text"
-                defaultValue={selectedRow.original.Fullname}
-                onChange={handleInputChange}
-              />
-            </div>
-            <div>
               <Form.Label className="form-label">Email</Form.Label>{" "}
               <Form.Control
                 name="Email"
