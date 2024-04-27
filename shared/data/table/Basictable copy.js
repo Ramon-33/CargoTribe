@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button, Form, } from "react-bootstrap";
+import { Button, Form, Modal } from "react-bootstrap";
 import { useTable, useSortBy, useGlobalFilter, usePagination } from "react-table";
 import { createClient } from '@supabase/supabase-js';
 
@@ -37,8 +37,10 @@ export const COLUMNS = [
 
 export const BasicTable = () => {
   const [data, setData] = useState([]);
+  const [selectedRow, setSelectedRow] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -85,6 +87,11 @@ export const BasicTable = () => {
     pageCount,
     setPageSize,
   } = tableInstance;
+
+  const handleRowClick = (row) => {
+    setSelectedRow(row);
+    setShowModal(true);
+  };
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
@@ -135,7 +142,7 @@ export const BasicTable = () => {
           {page.map((row, rowIndex) => {
             prepareRow(row);
             return (
-              <tr key={rowIndex} {...row.getRowProps()}>
+              <tr key={rowIndex} {...row.getRowProps()} onClick={() => handleRowClick(row)}>
                 {row.cells.map((cell, cellIndex) => {
                   return (
                     <td key={cellIndex} className="borderrigth" {...cell.getCellProps()}>
@@ -206,10 +213,38 @@ export const BasicTable = () => {
           </Button>
         </span>
       </div>
+      {selectedRow && (
+        <Modal show={showModal} onHide={() => setShowModal(false)}>
+          <Modal.Header closeButton>
+            <Modal.Title>Row Details</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <div>
+              <strong>Agent:</strong> {selectedRow.original.Agent}
+            </div>
+            <div>
+              <strong>Fullname:</strong> {selectedRow.original.Fullname}
+            </div>
+            <div>
+              <strong>Email:</strong> {selectedRow.original.Email}
+            </div>
+            <div>
+              <strong>Phone:</strong> {selectedRow.original.Phone}
+            </div>
+            <div>
+              <strong>Mobile:</strong> {selectedRow.original.Mobile}
+            </div>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={() => setShowModal(false)}>
+              Close
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      )}
     </>
   );
 };
-
 
 const GlobalFilter = ({ filter, setFilter }) => {
   return (

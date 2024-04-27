@@ -220,17 +220,34 @@ export const BasicTable = () => {
           </Modal.Header>
           <Modal.Body>
             <div>
-            <Form.Label className="form-label mg-b-0"><strong>Agent:</strong></Form.Label>{selectedRow.original.Agent}
+              <Form.Label className="form-label">Agent</Form.Label>{" "}
+              <Form.Control
+
+              placeholder="Enter Agent"
+              type="text"
+              defaultValue={selectedRow.original.Agent}
+            />
+            </div>
+            <div>
+              <Form.Label className="form-label">Fullname</Form.Label>{" "}
+              <Form.Control
+
+              placeholder="Enter Fullname"
+              type="text"
+              defaultValue={selectedRow.original.Fullname}
+            />
             </div>
             <div>
               <Form.Label className="form-label">Email</Form.Label>{" "}
               <Form.Control
 
-              placeholder="Enter your email"
+              placeholder="Enter Email"
               type="email"
-              defaultValue="me@sprukotechnologies.com"
+              defaultValue={selectedRow.original.Email}
             />
             </div>
+
+
             <div>
               <strong>Fullname:</strong> {selectedRow.original.Fullname}
             </div>
