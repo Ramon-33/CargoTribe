@@ -504,8 +504,8 @@ export const MENUITEMS = [
               selected:false,
             },
             {
-              path: `/components/pages/empty-page1`,
-              title: "Empty Page1",
+              path: `/components/pages/contacts`,
+              title: "Contacts",
               type: "link",
               active:false,
               selected:false,
