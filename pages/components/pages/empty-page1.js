@@ -42,11 +42,13 @@ const EmptyPage1 = () => (
           </Card>
         </Col>
       </Row>
+
+      
+      <DataTablesCom/>
       {/* <!-- row closed --> */}
     </div>
 );
 
-<DataTablesCom/>
 
 EmptyPage1.propTypes = {};
 

@@ -503,6 +503,13 @@ export const MENUITEMS = [
               active:false,
               selected:false,
             },
+            {
+              path: `/components/pages/empty-page1`,
+              title: "Empty Page1",
+              type: "link",
+              active:false,
+              selected:false,
+            },
           ],
         },
         {
