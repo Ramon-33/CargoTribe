@@ -46,6 +46,8 @@ const EmptyPage1 = () => (
     </div>
 );
 
+<DataTablesCom/>
+
 EmptyPage1.propTypes = {};
 
 EmptyPage1.defaultProps = {};
