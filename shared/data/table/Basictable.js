@@ -116,6 +116,13 @@ export const BasicTable = () => {
       }
       console.log("Record updated successfully:", data);
       // Close the modal after successful update
+
+    // Update the row in the data
+    const updatedRow = { ...selectedRow.original, ...updatedData };
+
+    // Update the state with the updated data
+    setData(data => data.map(row => row.id === selectedRow.original.id ? updatedRow : row));
+
       setShowModal(false);
     } catch (error) {
       console.error("Error updating record:", error.message);
