@@ -30,6 +30,16 @@ export const COLUMNS = [
     accessor: "Email",
     className: "wd-20p borderrigth",
   },
+  {
+    Header: "City",
+    accessor: "City",
+    className: "wd-15p borderrigth",
+  },
+  {
+    Header: "Adress",
+    accessor: "Adress",
+    className: "wd-20p borderrigth",
+  },
 ];
 
 export const BasicTable = () => {
