@@ -7,6 +7,7 @@ const supabaseUrl = 'https://zmucpipjwaxsasizjdug.supabase.co';
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InptdWNwaXBqd2F4c2FzaXpqZHVnIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTY4NzAxNzMzNSwiZXhwIjoyMDAyNTkzMzM1fQ.2D1XoLbkCJOXhOqnRPnsI0_uXq96ZNECYTinpYeFDkI';
 const supabase = createClient(supabaseUrl, supabaseKey);
 
+
 export const COLUMNS = [
   {
     Header: "ID",
@@ -147,11 +148,10 @@ export const BasicTable = () => {
           {headerGroups.map((headerGroup) => (
             <tr key={Math.random()} {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((column) => (
-                !column.hidden && // <-- Added this line to hide columns
                 <th key={Math.random()}
                   {...column.getHeaderProps(column.getSortByToggleProps())}
                   className={column.className}
-                  style={{ display: column.hidden ? 'none' : 'table-cell' }} // <-- Updated this line
+                  style={{ display: column.hidden ? 'none' : 'table-cell' }}
                 >
                   <span className="tabletitle">{column.render("Header")}</span>
                   <span>
