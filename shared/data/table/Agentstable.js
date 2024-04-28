@@ -7,12 +7,12 @@ const supabaseUrl = 'https://zmucpipjwaxsasizjdug.supabase.co';
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InptdWNwaXBqd2F4c2FzaXpqZHVnIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTY4NzAxNzMzNSwiZXhwIjoyMDAyNTkzMzM1fQ.2D1XoLbkCJOXhOqnRPnsI0_uXq96ZNECYTinpYeFDkI';
 const supabase = createClient(supabaseUrl, supabaseKey);
 
+
 export const COLUMNS = [
   {
     Header: "ID",
     accessor: "id",
     className: "wd-4p borderrigth",
-    hidden: true, // Hide the ID column from the UI
   },
   {
     Header: "Agent",
@@ -38,6 +38,7 @@ export const BasicTable = () => {
   const [error, setError] = useState(null);
   const [showModal, setShowModal] = useState(false);
   const [updatedData, setUpdatedData] = useState({});
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -103,12 +104,13 @@ export const BasicTable = () => {
         throw error;
       }
       console.log("Record updated successfully:", data);
+      // Close the modal after successful update
 
-      // Update the row in the data
-      const updatedRow = { ...selectedRow.original, ...updatedData };
+    // Update the row in the data
+    const updatedRow = { ...selectedRow.original, ...updatedData };
 
-      // Update the state with the updated data
-      setData(data => data.map(row => row.id === selectedRow.original.id ? updatedRow : row));
+    // Update the state with the updated data
+    setData(data => data.map(row => row.id === selectedRow.original.id ? updatedRow : row));
 
       setShowModal(false);
     } catch (error) {
@@ -148,7 +150,6 @@ export const BasicTable = () => {
                 <th key={Math.random()}
                   {...column.getHeaderProps(column.getSortByToggleProps())}
                   className={column.className}
-                  style={{ display: column.hidden ? 'none' : 'table-cell' }} // Hide the ID column from display
                 >
                   <span className="tabletitle">{column.render("Header")}</span>
                   <span>
