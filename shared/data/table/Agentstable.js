@@ -151,6 +151,7 @@ export const BasicTable = () => {
                 <th key={Math.random()}
                   {...column.getHeaderProps(column.getSortByToggleProps())}
                   className={column.className}
+                  style={{ display: column.hidden ? 'none' : 'table-cell' }}
                 >
                   <span className="tabletitle">{column.render("Header")}</span>
                   <span>
