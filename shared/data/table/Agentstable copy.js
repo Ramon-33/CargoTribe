@@ -13,7 +13,6 @@ export const COLUMNS = [
     Header: "ID",
     accessor: "id",
     className: "wd-4p borderrigth",
-    hidden: true,
   },
   {
     Header: "Agent",
@@ -121,24 +120,8 @@ export const BasicTable = () => {
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-  
-    // If Firstname or Lastname is being updated, update Fullname accordingly
-    if (name === "Firstname" || name === "Lastname") {
-      // Extract the updated Firstname and Lastname from the updatedData object
-      const updatedFirstname = name === "Firstname" ? value : updatedData.Firstname || selectedRow.original.Firstname;
-      const updatedLastname = name === "Lastname" ? value : updatedData.Lastname || selectedRow.original.Lastname;
-  
-      // Update Fullname by concatenating updated Firstname and Lastname
-      const updatedFullname = `${updatedFirstname} ${updatedLastname}`;
-  
-      // Update updatedData with the new Fullname value
-      setUpdatedData({ ...updatedData, Fullname: updatedFullname });
-    } else {
-      // If other fields are being updated, update updatedData directly
-      setUpdatedData({ ...updatedData, [name]: value });
-    }
+    setUpdatedData({ ...updatedData, [name]: value });
   };
-  
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
@@ -293,36 +276,6 @@ export const BasicTable = () => {
                 placeholder="Enter Email"
                 type="text"
                 defaultValue={selectedRow.original.Email}
-                onChange={handleInputChange}
-              />
-            </div>
-            <div>
-              <Form.Label className="form-label">Email</Form.Label>{" "}
-              <Form.Control
-                name="Email"
-                placeholder="Enter Email"
-                type="email"
-                defaultValue={selectedRow.original.Email}
-                onChange={handleInputChange}
-              />
-            </div>
-            <div>
-              <Form.Label className="form-label">Phone</Form.Label>{" "}
-              <Form.Control
-                name="Phone"
-                placeholder="Enter Phone"
-                type="text"
-                defaultValue={selectedRow.original.Phone}
-                onChange={handleInputChange}
-              />
-            </div>
-            <div>
-              <Form.Label className="form-label">Mobile</Form.Label>{" "}
-              <Form.Control
-                name="Mobile"
-                placeholder="Enter Mobile"
-                type="text"
-                defaultValue={selectedRow.original.Mobile}
                 onChange={handleInputChange}
               />
             </div>
