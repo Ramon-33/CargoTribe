@@ -327,32 +327,42 @@ export const BasicTable = () => {
               />
             </div>
             <div>
-              <Form.Label className="form-label">Email</Form.Label>{" "}
+              <Form.Label className="form-label">Phone Number</Form.Label>{" "}
               <Form.Control
-                name="Email"
-                placeholder="Enter Email"
-                type="email"
-                defaultValue={selectedRow.original.Email}
-                onChange={handleInputChange}
-              />
-            </div>
-            <div>
-              <Form.Label className="form-label">Phone</Form.Label>{" "}
-              <Form.Control
-                name="Phone"
-                placeholder="Enter Phone"
+                name="Phone Number"
+                placeholder="Enter Phone Number"
                 type="text"
                 defaultValue={selectedRow.original.Phone}
                 onChange={handleInputChange}
               />
             </div>
             <div>
-              <Form.Label className="form-label">Mobile</Form.Label>{" "}
+              <Form.Label className="form-label">City</Form.Label>{" "}
               <Form.Control
-                name="Mobile"
-                placeholder="Enter Mobile"
+                name="City"
+                placeholder="Enter City"
                 type="text"
-                defaultValue={selectedRow.original.Mobile}
+                defaultValue={selectedRow.original.City}
+                onChange={handleInputChange}
+              />
+            </div>
+            <div>
+              <Form.Label className="form-label">Adress</Form.Label>{" "}
+              <Form.Control
+                name="Adress"
+                placeholder="Enter Adress"
+                type="text"
+                defaultValue={selectedRow.original.Adress}
+                onChange={handleInputChange}
+              />
+            </div>
+            <div>
+              <Form.Label className="form-label">Domain</Form.Label>{" "}
+              <Form.Control
+                name="Domain"
+                placeholder="Enter Domain"
+                type="text"
+                defaultValue={selectedRow.original.Domain}
                 onChange={handleInputChange}
               />
             </div>
