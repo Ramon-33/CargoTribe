@@ -31,6 +31,11 @@ export const COLUMNS = [
     className: "wd-20p borderrigth",
   },
   {
+    Header: "Phone Number",
+    accessor: "Phone Number",
+    className: "wd-20p borderrigth",
+  },
+  {
     Header: "City",
     accessor: "City",
     className: "wd-15p borderrigth",
@@ -43,6 +48,11 @@ export const COLUMNS = [
   {
     Header: "Domain",
     accessor: "Domain",
+    className: "wd-20p borderrigth",
+  },
+  {
+    Header: "IATA Name",
+    accessor: "IATA Name",
     className: "wd-20p borderrigth",
   },
   {
