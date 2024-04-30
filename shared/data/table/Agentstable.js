@@ -152,21 +152,9 @@ export const BasicTable = () => {
   const handleInputChange = (event) => {
     const { name, value } = event.target;
   
-    // If Firstname or Lastname is being updated, update Fullname accordingly
-    if (name === "Firstname" || name === "Lastname") {
-      // Extract the updated Firstname and Lastname from the updatedData object
-      const updatedFirstname = name === "Firstname" ? value : updatedData.Firstname || selectedRow.original.Firstname;
-      const updatedLastname = name === "Lastname" ? value : updatedData.Lastname || selectedRow.original.Lastname;
-  
-      // Update Fullname by concatenating updated Firstname and Lastname
-      const updatedFullname = `${updatedFirstname} ${updatedLastname}`;
-  
-      // Update updatedData with the new Fullname value
-      setUpdatedData({ ...updatedData, Fullname: updatedFullname });
-    } else {
       // If other fields are being updated, update updatedData directly
       setUpdatedData({ ...updatedData, [name]: value });
-    }
+    
   };
   
 
@@ -332,7 +320,7 @@ export const BasicTable = () => {
                 name="Phone Number"
                 placeholder="Enter Phone Number"
                 type="text"
-                defaultValue={selectedRow.original.Phone}
+                defaultValue={selectedRow.original["Phone Number"]}
                 onChange={handleInputChange}
               />
             </div>
