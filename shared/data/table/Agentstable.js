@@ -156,6 +156,32 @@ export const BasicTable = () => {
       setUpdatedData({ ...updatedData, [name]: value });
     
   };
+
+  const handleAddNewAgent = async () => {
+    try {
+      // You can implement the logic to gather new agent data here.
+      // For simplicity, let's assume you have a hardcoded new agent object.
+      const newAgent = {
+        Agent: "New Agent",
+        Website: "www.example.com",
+        // Other properties...
+      };
+
+      // Insert the new agent into the database
+      const { data: insertedAgent, error } = await supabase
+        .from('agents')
+        .insert([newAgent]);
+
+      if (error) {
+        throw error;
+      }
+
+      // Update the state with the newly inserted agent
+      setData([...data, insertedAgent[0]]);
+    } catch (error) {
+      console.error("Error adding new agent:", error.message);
+    }
+  };
   
 
   if (loading) return <div>Loading...</div>;

@@ -13,9 +13,9 @@ const Agents = () => (
         <span className="main-content-title mg-b-0 mg-b-lg-1">AGENTS</span>
       </div>
       <div className="justify-content-center mt-2">
-        <Button variant="" type="button" className="btn btn-primary">
-          <i className="fe fe-plus me-1"></i> Add New Agent
-        </Button>
+      <Button variant="" type="button" className="btn btn-primary" onClick={handleAddNewAgent}>
+            <i className="fe fe-plus me-1"></i> Add New Agent
+          </Button>
       </div>
     </div>
     {/* <!-- /breadcrumb --> */}
