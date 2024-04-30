@@ -372,7 +372,7 @@ export const BasicTable = () => {
                 name="IATA Name"
                 placeholder="Enter IATA Name"
                 type="text"
-                defaultValue={selectedRow.original.name}
+                defaultValue={selectedRow.original["IATA Name"]}
                 onChange={handleInputChange}
               />
             </div>
@@ -382,7 +382,7 @@ export const BasicTable = () => {
                 name="IATA Number"
                 placeholder="Enter IATA Number"
                 type="text"
-                defaultValue={selectedRow.original.Number}
+                defaultValue={selectedRow.original["IATA Number"]}
                 onChange={handleInputChange}
               />
             </div>
