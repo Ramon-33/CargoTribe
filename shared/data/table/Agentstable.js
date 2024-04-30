@@ -366,6 +366,26 @@ export const BasicTable = () => {
                 onChange={handleInputChange}
               />
             </div>
+            <div>
+              <Form.Label className="form-label">IATA Name</Form.Label>{" "}
+              <Form.Control
+                name="IATA Name"
+                placeholder="Enter IATA Name"
+                type="text"
+                defaultValue={selectedRow.original.name}
+                onChange={handleInputChange}
+              />
+            </div>
+            <div>
+              <Form.Label className="form-label">IATA Number</Form.Label>{" "}
+              <Form.Control
+                name="IATA Number"
+                placeholder="Enter IATA Number"
+                type="text"
+                defaultValue={selectedRow.original.Number}
+                onChange={handleInputChange}
+              />
+            </div>
           </Modal.Body>
           <Modal.Footer>
             <Button variant="primary" onClick={handleSave}>
