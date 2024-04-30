@@ -3,14 +3,41 @@ import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import dynamic from 'next/dynamic';
 const DataTablesCom = dynamic(() => import('@/shared/data/table/datatable/agents-table'), { ssr: false });
+import { createClient } from '@supabase/supabase-js';
+
+const supabaseUrl = 'https://zmucpipjwaxsasizjdug.supabase.co';
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InptdWNwaXBqd2F4c2FzaXpqZHVnIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTY4NzAxNzMzNSwiZXhwIjoyMDAyNTkzMzM1fQ.2D1XoLbkCJOXhOqnRPnsI0_uXq96ZNECYTinpYeFDkI';
+const supabase = createClient(supabaseUrl, supabaseKey);
 
 const Agents = () => {
   const [showModal, setShowModal] = useState(false);
 
-  const handleAddNewAgent = () => {
-    // Your logic to handle adding a new agent goes here
-    // For now, let's just show a modal
-    setShowModal(true);
+  const handleAddNewAgent = async () => {
+    try {
+      // Your logic to gather new agent data goes here.
+      // For now, let's assume you have the new agent data in an object named `newAgent`.
+      const newAgent = {
+        Agent: "New Agent",
+        Website: "www.example.com",
+        // Other properties...
+      };
+  
+      // Insert the new agent into the database
+      const { data, error } = await supabase.from('agents').insert([newAgent]);
+  
+      if (error) {
+        throw error;
+      }
+  
+      console.log("New agent added successfully:", data);
+      // Optionally, you can show a success message or perform additional actions after successful insertion.
+  
+      // Close the modal after successful insertion
+      setShowModal(false);
+    } catch (error) {
+      console.error("Error adding new agent:", error.message);
+      // Optionally, you can show an error message or perform additional actions in case of an error.
+    }
   };
 
   return (
