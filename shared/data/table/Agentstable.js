@@ -40,6 +40,16 @@ export const COLUMNS = [
     accessor: "Adress",
     className: "wd-20p borderrigth",
   },
+  {
+    Header: "Domain",
+    accessor: "Domain",
+    className: "wd-20p borderrigth",
+  },
+  {
+    Header: "IATA Number",
+    accessor: "IATA Number",
+    className: "wd-20p borderrigth",
+  },
 ];
 
 export const BasicTable = () => {
