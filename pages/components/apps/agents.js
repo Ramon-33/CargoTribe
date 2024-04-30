@@ -2,7 +2,7 @@ import Seo from '@/shared/layout-components/seo/seo';
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import dynamic from 'next/dynamic';
-const DataTablesCom = dynamic(()=>import('@/shared/data/table/datatable/agents-table'), { ssr: false })
+const DataTablesCom = dynamic(() => import('@/shared/data/table/datatable/agents-table'), { ssr: false });
 
 const Agents = () => {
   const [showModal, setShowModal] = useState(false);
@@ -12,25 +12,26 @@ const Agents = () => {
     // For now, let's just show a modal
     setShowModal(true);
   };
-  
-  <div>
-    <Seo title={"Agents"}/>
-    {/* <!-- breadcrumb --> */}
-    <div className="breadcrumb-header justify-content-between">
-      <div className="left-content">
-        <span className="main-content-title mg-b-0 mg-b-lg-1">AGENTS</span>
-      </div>
-      <div className="justify-content-center mt-2">
-      <Button variant="" type="button" className="btn btn-primary" onClick={handleAddNewAgent}>
+
+  return (
+    <div>
+      <Seo title={"Agents"} />
+      {/* <!-- breadcrumb --> */}
+      <div className="breadcrumb-header justify-content-between">
+        <div className="left-content">
+          <span className="main-content-title mg-b-0 mg-b-lg-1">AGENTS</span>
+        </div>
+        <div className="justify-content-center mt-2">
+          <Button variant="" type="button" className="btn btn-primary" onClick={handleAddNewAgent}>
             <i className="fe fe-plus me-1"></i> Add New Agent
           </Button>
+        </div>
       </div>
-    </div>
-    {/* <!-- /breadcrumb --> */}
+      {/* <!-- /breadcrumb --> */}
 
-    {/* <!-- row --> */}
-      
-      <DataTablesCom/>
+      {/* <!-- row --> */}
+
+      <DataTablesCom />
       {/* <!-- row closed --> */}
 
       {showModal && (
@@ -55,13 +56,9 @@ const Agents = () => {
         </div>
       )}
     </div>
+  );
 };
 
-
-Agents.propTypes = {};
-
-Agents.defaultProps = {};
-
-Agents.layout = "Contentlayout"
+Agents.layout = "Contentlayout";
 
 export default Agents;
