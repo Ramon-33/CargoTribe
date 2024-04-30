@@ -4,7 +4,15 @@ import { Button } from 'react-bootstrap';
 import dynamic from 'next/dynamic';
 const DataTablesCom = dynamic(()=>import('@/shared/data/table/datatable/agents-table'), { ssr: false })
 
-const Agents = () => (
+const Agents = () => {
+  const [showModal, setShowModal] = useState(false);
+
+  const handleAddNewAgent = () => {
+    // Your logic to handle adding a new agent goes here
+    // For now, let's just show a modal
+    setShowModal(true);
+  };
+  
   <div>
     <Seo title={"Agents"}/>
     {/* <!-- breadcrumb --> */}
@@ -24,8 +32,30 @@ const Agents = () => (
       
       <DataTablesCom/>
       {/* <!-- row closed --> */}
+
+      {showModal && (
+        <div className="modal fade show" tabIndex="-1" role="dialog" aria-labelledby="addNewAgentModal" style={{ display: 'block', backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
+          <div className="modal-dialog modal-dialog-centered" role="document">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title" id="addNewAgentModal">Add New Agent</h5>
+                <button type="button" className="btn-close" aria-label="Close" onClick={() => setShowModal(false)}></button>
+              </div>
+              <div className="modal-body">
+                {/* Your form inputs to add a new agent */}
+                {/* For simplicity, let's just show a message */}
+                <p>Add New Agent Form</p>
+              </div>
+              <div className="modal-footer">
+                <button type="button" className="btn btn-secondary" onClick={() => setShowModal(false)}>Close</button>
+                <button type="button" className="btn btn-primary" onClick={() => setShowModal(false)}>Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
-);
+};
 
 
 Agents.propTypes = {};
