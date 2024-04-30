@@ -120,6 +120,46 @@ const Agents = () => {
                 onChange={handleInputChange}
               />
             </Form.Group>
+            <Form.Group controlId="formAgentAdress">
+              <Form.Label>Agent Adress</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter agent Adress"
+                name="Adress"
+                value={newAgentData.Adress}
+                onChange={handleInputChange}
+              />
+            </Form.Group>
+            <Form.Group controlId="formAgentDomain">
+              <Form.Label>Agent Domain</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter agent Domain"
+                name="Domain"
+                value={newAgentData.Domain}
+                onChange={handleInputChange}
+              />
+            </Form.Group>
+            <Form.Group controlId="formAgentIATA Name">
+              <Form.Label>Agent IATA Name</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter agent IATA Name"
+                name="IATA Name"
+                value={newAgentData["IATA Name"]}
+                onChange={handleInputChange}
+              />
+            </Form.Group>
+            <Form.Group controlId="formAgentIATA Number">
+              <Form.Label>Agent IATA Number</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter agent IATA Number"
+                name="IATA Number"
+                value={newAgentData["IATA Number"]}
+                onChange={handleInputChange}
+              />
+            </Form.Group>
             {/* Add other form fields as needed */}
           </Form>
         </Modal.Body>
