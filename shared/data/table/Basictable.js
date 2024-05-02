@@ -148,6 +148,12 @@ export const BasicTable = () => {
   //     setUpdatedData({ ...updatedData, [name]: value });
   //   }
   // };
+
+    const handleInputChange = (event) => {
+    const { name, value } = event.target;
+      setUpdatedData({ ...updatedData, [name]: value });
+    
+  };
   
 
   if (loading) return <div>Loading...</div>;
