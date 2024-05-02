@@ -40,6 +40,16 @@ export const COLUMNS = [
     accessor: "Mobile",
     className: "wd-20p borderrigth",
   },
+  {
+    Header: "Webcargo",
+    accessor: "Webcargo",
+    className: "wd-20p borderrigth",
+  },
+  {
+    Header: "Status",
+    accessor: "Status",
+    className: "wd-20p borderrigth",
+  },
 ];
 
 export const BasicTable = () => {
@@ -319,6 +329,26 @@ export const BasicTable = () => {
                 placeholder="Enter Mobile"
                 type="text"
                 defaultValue={selectedRow.original.Mobile}
+                onChange={handleInputChange}
+              />
+            </div>
+            <div>
+              <Form.Label className="form-label">Webcargo</Form.Label>{" "}
+              <Form.Control
+                name="Webcargo"
+                placeholder=""
+                type="text"
+                defaultValue={selectedRow.original.Webcargo}
+                onChange={handleInputChange}
+              />
+            </div>
+            <div>
+              <Form.Label className="form-label">Status</Form.Label>{" "}
+              <Form.Control
+                name="Status"
+                placeholder=""
+                type="text"
+                defaultValue={selectedRow.original.Status}
                 onChange={handleInputChange}
               />
             </div>
