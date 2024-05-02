@@ -129,25 +129,25 @@ export const BasicTable = () => {
     }
   };
 
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
+  // const handleInputChange = (event) => {
+  //   const { name, value } = event.target;
   
-    // If Firstname or Lastname is being updated, update Fullname accordingly
-    if (name === "Firstname" || name === "Lastname") {
-      // Extract the updated Firstname and Lastname from the updatedData object
-      const updatedFirstname = name === "Firstname" ? value : updatedData.Firstname || selectedRow.original.Firstname;
-      const updatedLastname = name === "Lastname" ? value : updatedData.Lastname || selectedRow.original.Lastname;
+  //   // If Firstname or Lastname is being updated, update Fullname accordingly
+  //   if (name === "Firstname" || name === "Lastname") {
+  //     // Extract the updated Firstname and Lastname from the updatedData object
+  //     const updatedFirstname = name === "Firstname" ? value : updatedData.Firstname || selectedRow.original.Firstname;
+  //     const updatedLastname = name === "Lastname" ? value : updatedData.Lastname || selectedRow.original.Lastname;
   
-      // Update Fullname by concatenating updated Firstname and Lastname
-      const updatedFullname = `${updatedFirstname} ${updatedLastname}`;
+  //     // Update Fullname by concatenating updated Firstname and Lastname
+  //     const updatedFullname = `${updatedFirstname} ${updatedLastname}`;
   
-      // Update updatedData with the new Fullname value
-      setUpdatedData({ ...updatedData, Fullname: updatedFullname });
-    } else {
-      // If other fields are being updated, update updatedData directly
-      setUpdatedData({ ...updatedData, [name]: value });
-    }
-  };
+  //     // Update updatedData with the new Fullname value
+  //     setUpdatedData({ ...updatedData, Fullname: updatedFullname });
+  //   } else {
+  //     // If other fields are being updated, update updatedData directly
+  //     setUpdatedData({ ...updatedData, [name]: value });
+  //   }
+  // };
   
 
   if (loading) return <div>Loading...</div>;
