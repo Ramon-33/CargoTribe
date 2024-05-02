@@ -22,7 +22,7 @@ export const COLUMNS = [
   },
   {
     Header: "Fullname",
-    accessor: "Fullname",
+    accessor: "Firstname",
     className: "wd-25p borderrigth",
   },
   {
