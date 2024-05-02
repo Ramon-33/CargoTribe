@@ -129,26 +129,6 @@ export const BasicTable = () => {
     }
   };
 
-  // const handleInputChange = (event) => {
-  //   const { name, value } = event.target;
-  
-  //   // If Firstname or Lastname is being updated, update Fullname accordingly
-  //   if (name === "Firstname" || name === "Lastname") {
-  //     // Extract the updated Firstname and Lastname from the updatedData object
-  //     const updatedFirstname = name === "Firstname" ? value : updatedData.Firstname || selectedRow.original.Firstname;
-  //     const updatedLastname = name === "Lastname" ? value : updatedData.Lastname || selectedRow.original.Lastname;
-  
-  //     // Update Fullname by concatenating updated Firstname and Lastname
-  //     const updatedFullname = `${updatedFirstname} ${updatedLastname}`;
-  
-  //     // Update updatedData with the new Fullname value
-  //     setUpdatedData({ ...updatedData, Fullname: updatedFullname });
-  //   } else {
-  //     // If other fields are being updated, update updatedData directly
-  //     setUpdatedData({ ...updatedData, [name]: value });
-  //   }
-  // };
-
     const handleInputChange = (event) => {
     const { name, value } = event.target;
       setUpdatedData({ ...updatedData, [name]: value });
@@ -289,16 +269,6 @@ export const BasicTable = () => {
                 placeholder="Enter Agent"
                 type="text"
                 defaultValue={selectedRow.original.Agent}
-                onChange={handleInputChange}
-              />
-            </div>
-            <div>
-              <Form.Label className="form-label">Fullname</Form.Label>{" "}
-              <Form.Control
-                name="Fullname"
-                placeholder="Enter Fullname"
-                type="text"
-                defaultValue={`${selectedRow.original.Firstname} ${selectedRow.original.Lastname}`}
                 onChange={handleInputChange}
               />
             </div>
