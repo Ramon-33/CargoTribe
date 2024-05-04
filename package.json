@@ -20,6 +20,7 @@
     "@mui/icons-material": "^5.11.16",
     "@mui/lab": "^5.0.0-alpha.132",
     "@mui/material": "^5.13.3",
+    "@supabase/supabase-js": "^2.36.0",
     "apexcharts": "^3.40.0",
     "chart.js": "^4.3.0",
     "draft-js": "^0.11.7",
@@ -31,6 +32,7 @@
     "filepond": "^4.30.4",
     "firebase": "^9.22.1",
     "hh-mm-ss": "^1.2.0",
+    "imap": "^0.8.19",
     "immutable": "^4.3.0",
     "leaflet": "^1.9.4",
     "next": "13.4.4",
@@ -68,8 +70,6 @@
     "styled-components": "^5.3.11",
     "sweetalert2": "^11.7.10",
     "swiper": "^9.3.2",
-    "validator": "^13.9.0",
-    "@supabase/supabase-js": "^2.36.0",
-    "imap": "^0.8.19"
+    "validator": "^13.9.0"
   }
 }
