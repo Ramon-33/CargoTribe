@@ -32,7 +32,7 @@ const FileDetailsCom = () => {
       {/* Breadcrumb */}
       <div className="breadcrumb-header justify-content-between">
         <div className="left-content">
-          <span className="main-content-title mg-b-0 mg-b-lg-1">FILE DETAILS</span>
+          <span className="main-content-title mg-b-0 mg-b-lg-1">PRICE REQUEST</span>
         </div>
         <div className="justify-content-center mt-2">
           <Breadcrumb className="breadcrumb">

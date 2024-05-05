@@ -5,7 +5,7 @@ const FileDetailsCom = dynamic(()=>import('@/shared/data/app/file-details-com'),
 
 const FileDetails = () => {
   return (
-    <div><Seo title={"File Details"}/>
+    <div><Seo title={"Price Request"}/>
     <FileDetailsCom/></div>
   )
 }

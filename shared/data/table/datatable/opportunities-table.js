@@ -1,6 +1,6 @@
 import React from 'react'
 import {  Card,Breadcrumb, Col, Row } from 'react-bootstrap';
-import {BasicTable} from "../Basictable"
+import {BasicTable} from "../Opporunitiestable"
 
 const DataTablesCom = () => {
   return (

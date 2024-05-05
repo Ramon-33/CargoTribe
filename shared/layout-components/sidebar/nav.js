@@ -87,7 +87,7 @@ export const MENUITEMS = [
               title: "Opportunities",
             },
             {
-              path: `/components/apps/file-details`,
+              path: `/components/apps/price-request`,
               type: "link",
               active:false,
               selected:false,
