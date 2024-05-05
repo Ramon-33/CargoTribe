@@ -15,7 +15,7 @@ export default async function handler(req, res) {
     imap.openBox('INBOX', false, (err, box) => {
       if (err) {
         console.error('Error opening INBOX:', err);
-        res.status(500).json({ message: 'Failed to fetch email.' });
+        res.status(500).json({ message: 'Failed to fetch emails.' });
         imap.end();
         return;
       }
@@ -23,22 +23,13 @@ export default async function handler(req, res) {
       imap.search(['UNSEEN'], (searchErr, results) => {
         if (searchErr) {
           console.error('Error searching for emails:', searchErr);
-          res.status(500).json({ message: 'Failed to fetch email.' });
+          res.status(500).json({ message: 'Failed to fetch emails.' });
           imap.end();
           return;
         }
-
-        if (results.length === 0) {
-          console.log('No unread emails found.');
-          res.status(404).json({ message: 'No unread emails found.' });
-          imap.end();
-          return;
-        }
-
-        const newestEmailUID = results[results.length - 1]; // Get the UID of the newest unread email
-        const fetch = imap.fetch(newestEmailUID, { bodies: '' });
 
         const fetchEmails = [];
+        const fetch = imap.fetch(results, { bodies: '' });
 
         fetch.on('message', (msg) => {
           let body = '';
@@ -54,15 +45,15 @@ export default async function handler(req, res) {
         });
 
         fetch.once('error', (fetchErr) => {
-          console.error('Error fetching email:', fetchErr);
-          res.status(500).json({ message: 'Failed to fetch email.' });
+          console.error('Error fetching emails:', fetchErr);
+          res.status(500).json({ message: 'Failed to fetch emails.' });
           imap.end();
         });
 
         fetch.once('end', () => {
-          // Once the email is fetched, send JSON response
+          // Once all emails are fetched, send JSON response
           imap.end();
-          res.status(200).json({ message: 'Email fetched successfully.', emails: fetchEmails });
+          res.status(200).json({ message: 'Emails fetched successfully.', emails: fetchEmails });
         });
       });
     });
@@ -70,7 +61,7 @@ export default async function handler(req, res) {
 
   imap.once('error', (err) => {
     console.error('IMAP error:', err);
-    res.status(500).json({ message: 'Failed to fetch email.' });
+    res.status(500).json({ message: 'Failed to fetch emails.' });
     imap.end();
   });
 

@@ -32,6 +32,7 @@
     "filepond": "^4.30.4",
     "firebase": "^9.22.1",
     "hh-mm-ss": "^1.2.0",
+    "html-react-parser": "^5.1.10",
     "imap": "^0.8.19",
     "immutable": "^4.3.0",
     "leaflet": "^1.9.4",

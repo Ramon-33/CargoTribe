@@ -1138,7 +1138,7 @@ export default function Header() {
                         </div>
                         <div className="ms-3 my-auto">
                           <h6 className="tx-15 font-weight-semibold mb-0">
-                            Teri Dactyl
+                            Ramon Kolk
                           </h6>
                           <span className="dropdown-title-text subtext op-6  tx-12">
                             Premium Member

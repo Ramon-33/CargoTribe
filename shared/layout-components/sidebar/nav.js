@@ -49,7 +49,7 @@ export const MENUITEMS = [
       menutitle: "SALES",
       Items: [
         {
-          title: "Apps",
+          title: "Sales",
           icon: (
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -87,11 +87,11 @@ export const MENUITEMS = [
               title: "Opportunities",
             },
             {
-              path: `/components/apps/calendar`,
+              path: `/components/apps/file-details`,
               type: "link",
               active:false,
               selected:false,
-              title: "Calendar",
+              title: "Price Request",
             },
             {
               path: `/components/apps/contacts`,
@@ -99,13 +99,6 @@ export const MENUITEMS = [
               active:false,
               selected:false,
               title: "Contacts",
-            },
-            {
-              path: `/components/apps/file-details`,
-              type: "link",
-              active:false,
-              selected:false,
-              title: "File-details",
             },
           ],
         },

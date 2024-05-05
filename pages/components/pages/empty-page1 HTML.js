@@ -1,3 +1,4 @@
+import Seo from '@/shared/layout-components/seo/seo';
 import React, { useState } from 'react';
 import { Breadcrumb, Card, Col, Row } from 'react-bootstrap';
 
@@ -19,15 +20,11 @@ const EmptyPage1 = () => {
     reader.readAsText(file);
   };
 
-  const handleReplyAll = () => {
-    
-    // Implement reply all functionality here
-    console.log('Reply All button clicked');
-  };
-
   return (
     <div>
-      {/* Breadcrumb */}
+      <Seo title={"Empty Page"}/>
+
+      {/* <!-- breadcrumb --> */}
       <div className="breadcrumb-header justify-content-between">
         <div className="left-content">
           <span className="main-content-title mg-b-0 mg-b-lg-1">EMPTY PAGE</span>
@@ -38,7 +35,7 @@ const EmptyPage1 = () => {
               Pages
             </Breadcrumb.Item>
             <Breadcrumb.Item
-              className="breadcrumb-item"
+              className="breadcrumb-item "
               active
               aria-current="page"
             >
@@ -47,27 +44,24 @@ const EmptyPage1 = () => {
           </Breadcrumb>
         </div>
       </div>
-      {/* End Breadcrumb */}
+      {/* <!-- /breadcrumb --> */}
 
-      {/* Content */}
+      {/* <!-- row --> */}
       <Row>
-        <Col md={12} xl={12} xs={12} sm={12}>
+        <Col md={12} xl={12} xs={12} sm={12} >
           <Card>
             <Card.Body>
               <input type="file" onChange={handleFileChange} accept=".html" />
               {loading ? (
                 <div>Loading...</div>
               ) : (
-                <>
-                  <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
-                  <button onClick={handleReplyAll}>Reply All</button>
-                </>
+                <div dangerouslySetInnerHTML={{ __html: htmlContent }} />
               )}
             </Card.Body>
           </Card>
         </Col>
       </Row>
-      {/* End Content */}
+      {/* <!-- row closed --> */}
     </div>
   );
 };

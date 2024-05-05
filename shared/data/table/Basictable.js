@@ -133,6 +133,9 @@ export const BasicTable = () => {
     // Update the state with the updated data
     setData(data => data.map(row => row.id === selectedRow.original.id ? updatedRow : row));
 
+    // Reset updatedData after successful save
+    setUpdatedData({});
+
       setShowModal(false);
     } catch (error) {
       console.error("Error updating record:", error.message);
