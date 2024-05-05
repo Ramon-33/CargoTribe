@@ -103,9 +103,12 @@ export const VerticalMenu = () => {
     .querySelector(".main-content")
     .classList.remove("horizontal-content");
   name();
-  localStorage.setItem("nowavertical", true);
+  // localStorage.setItem("nowavertical", true);
+  // localStorage.removeItem("nowahorizontal");
+  // localStorage.removeItem("nowahorizontalHover");
+  localStorage.setItem("nowahorizontalHover", true);
   localStorage.removeItem("nowahorizontal");
-  localStorage.removeItem("nowahorizontalHover");
+  localStorage.removeItem("nowavertical");
 
   // 		$('#slide-left').remove('d-none');
   // 		$('#slide-right').remove('d-none');
